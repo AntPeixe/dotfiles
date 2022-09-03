@@ -40,45 +40,27 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+
 ###############
 ### PROMPT ###
 ###############
-
 PROMPT='$(kube_ps1)'$PROMPT
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi  # kubectl autocompletion
 
-# kubectl autocompletion
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
-
-###############
-### Aliases ###
-###############
-
-alias tmux='tmux -u -2'
-alias ta='tmux attach -t'
-alias tnew='tmux new -s'
-alias tls='tmux ls'
-alias tkill='tmux kill-session -t'
-
-# Easy python venv activation /deactivation
-alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
-alias de='deactivate'
-
-# Easy neovim
-alias v='nvim'
-alias vim='nvim'
-alias \"vim\"='vim'
-
-# Easy unset kube context
-alias ku='kubectx -u'
 
 ###############
 ### Exports ###
 ###############
+export TERM="xterm-256color"  # Support for 256 color schemes
 
-# Support for 256 color schemes
-export TERM="xterm-256color"
-export PATH="$PATH:$HOME/.local/bin"
 
+################
+### SOURCING ###
+################
+profile=$HOME/.zsh_profile
+if [[ -f "$profile" ]]; then
+    source $profile
+fi
 envs=$HOME/.envs
 if [[ -f "$envs" ]]; then
     source $envs

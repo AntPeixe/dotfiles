@@ -1,0 +1,33 @@
+# FZF
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export FZF_COMPLETION_TRIGGER='~~'
+
+###############
+### Aliases ###
+###############
+
+alias tmux='tmux -u -2'
+alias ta='tmux attach -t'
+alias tnew='tmux new -s'
+alias tls='tmux ls'
+alias tkill='tmux kill-session -t'
+
+# Easy python venv activation /deactivation
+alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
+alias de='deactivate'
+
+# Easy neovim
+alias v='nvim'
+alias vim='nvim'
+alias \"vim\"='vim'
+
+alias ku='kubectx -u'  # Easy unset kube context
+alias krc='kubectl resource-capacity'  # Easy kubectl resource-capacity
+
+PATH=$HOME/.local/bin/:$PATH
+PATH=$HOME/.local/scripts/:$PATH
+PATH=$HOME/.krew/bin/:$PATH
+export PATH
+
+bindkey -s ^f "tmux-sessionizer\n"  # bind ctrl+f to to tmux-sessionizer
