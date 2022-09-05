@@ -1,5 +1,3 @@
-local fn = vim.fn
-
 -- Autocommand source plugins.lua on save
 vim.cmd [[
   augroup packer_user_config
