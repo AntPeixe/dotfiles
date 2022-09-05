@@ -43,6 +43,14 @@ local packer_start = packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"           -- enables LSP
 
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+  }
+
+
 
 end)
 

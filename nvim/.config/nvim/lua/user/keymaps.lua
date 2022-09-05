@@ -10,7 +10,7 @@ vim.g.maplocalleader = " "
 keymap("n", "<leader>l", ":nohl<CR>:echo 'Search Cleared'<CR>", opts)
 
 -- map <leader>+e to open vertical explorer
-keymap("n", "<leader>e", ":Lex<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- use ctrl to simplify split moving
 keymap("n", "<C-J>", "<C-W><C-J>", opts)
