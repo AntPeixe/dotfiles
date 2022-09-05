@@ -48,8 +48,6 @@ local packer_start = packer.startup(function(use)
     },
   }
 
-
-
 end)
 
 -- tabline config
@@ -58,6 +56,7 @@ vim.g["airline#extensions#tabline#enabled"] = 1
 vim.g["airline#extensions#tabline#formatter"] = "unique_tail_improved"
 
 vim.g["gruvbox_italic"] = 1         -- enable italics
+vim.g["gruvbox_sign_column"] = "bg0"
 vim.cmd [[colorscheme gruvbox]]     -- theme
 
 return packer_start
