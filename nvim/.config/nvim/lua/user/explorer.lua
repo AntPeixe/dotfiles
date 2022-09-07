@@ -3,4 +3,8 @@ if not status_ok then
     return
 end
 
-tree.setup()
+tree.setup {
+    git = {
+        ignore = false
+    },
+}
