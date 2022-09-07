@@ -12,6 +12,7 @@ set.background = "dark"                 -- dark background
 vim.g["gruvbox_italic"] = 1             -- enable italics
 vim.g["gruvbox_sign_column"] = "bg0"    -- no background for signcolumn
 vim.cmd [[colorscheme gruvbox]]         -- theme  (assumes the plugin is installed)
+vim.cmd [[highlight Normal guibg=none]] -- transparent background
 
 -- tabs
 set.expandtab = true        -- tabs are spaces
