@@ -19,8 +19,12 @@ local packer_start = packer.startup(function(use)
   use "wbthomason/packer.nvim"
 
   use "morhetz/gruvbox"                     -- gruvbox colorscheme
-  use "vim-airline/vim-airline"             -- colored status/tabline bar
-  use "vim-airline/vim-airline-themes"      -- theme for airline
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+
+  -- git
   use "tpope/vim-fugitive"                  -- git bar and commands
   use "airblade/vim-gitgutter"              -- git line changes
 
@@ -43,20 +47,9 @@ local packer_start = packer.startup(function(use)
 
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
+    requires = {'kyazdani42/nvim-web-devicons'}  -- for file icons
   }
 
 end)
-
--- tabline config
-vim.g["airline_section_z"] = "%p%% %#__accent_bold#%l%#__restore__#%#__accent_bold#/%L%#__restore__#:%v"
-vim.g["airline#extensions#tabline#enabled"] = 1
-vim.g["airline#extensions#tabline#formatter"] = "unique_tail_improved"
-
-vim.g["gruvbox_italic"] = 1         -- enable italics
-vim.g["gruvbox_sign_column"] = "bg0"
-vim.cmd [[colorscheme gruvbox]]     -- theme
 
 return packer_start

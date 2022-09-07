@@ -3,11 +3,15 @@ local set = vim.opt
 set.timeoutlen = 500
 
 -- theme
-set.background = "dark"     -- dark background
 set.termguicolors = true    -- true colors
 set.cursorline = true       -- highlight cursor line
 set.syntax = "on"           -- enable syntax
 set.showmode = false        -- don't show mode
+
+set.background = "dark"                 -- dark background
+vim.g["gruvbox_italic"] = 1             -- enable italics
+vim.g["gruvbox_sign_column"] = "bg0"    -- no background for signcolumn
+vim.cmd [[colorscheme gruvbox]]         -- theme  (assumes the plugin is installed)
 
 -- tabs
 set.expandtab = true        -- tabs are spaces
@@ -18,7 +22,7 @@ set.softtabstop = 4         -- tabs as 4 spaces
 -- line numbers
 set.relativenumber = true   -- relative numbers
 set.number = true           -- line numbers
-set.signcolumn = "yes:2"   -- fix signcolumn with 2 columns
+set.signcolumn = "yes:2"    -- fix signcolumn with 2 columns
 
 vim.cmd [[filetype plugin indent on]]   -- file type detection
 set.smartindent = true      -- auto indent new lines
@@ -41,7 +45,7 @@ set.lcs="tab:>-,trail:-"
 
 -- undo
 -- undo persists after exiting file
-set.undodir  = os.getenv("HOME") .. '/.cache/nvim/undo'  
+set.undodir  = os.getenv("HOME") .. '/.cache/nvim/undo'
 set.undofile = true                -- see :help undodir and :help undofile
 
 set.diffopt.extends="vertical" 	   -- diff vertical split for easier comparison
