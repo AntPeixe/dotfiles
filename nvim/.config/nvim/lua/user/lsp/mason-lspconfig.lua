@@ -17,9 +17,16 @@ mason_lspconfig.setup_handlers({
     function (server_name)
         require("lspconfig")[server_name].setup(opts)
     end,
+
     ["pyright"] = function ()
         local pyright_opts = require("user.lsp.settings.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
         require("lspconfig").pyright.setup(opts)
     end,
+
+    ["sumneko_lua"] = function ()
+        local sumneko_lua_settings = require("user.lsp.settings.sumneko_lua")
+        opts = vim.tbl_deep_extend("force", sumneko_lua_settings, opts)
+        require("lspconfig").sumneko_lua.setup(opts)
+    end
 })
