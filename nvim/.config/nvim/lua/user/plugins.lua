@@ -18,7 +18,12 @@ local packer_start = packer.startup(function(use)
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
 
-  use "morhetz/gruvbox"                     -- gruvbox colorscheme
+  use {
+    'catppuccin/nvim',
+    as = 'catppuccin',
+    run = ':CatppuccinCompile'
+  }
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}

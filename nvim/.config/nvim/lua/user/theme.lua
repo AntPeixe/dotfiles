@@ -1,12 +1,21 @@
-local colorscheme = "gruvbox"
+local catppuccin_ok, catppuccin = pcall(require, "catppuccin")
+if catppuccin_ok then
+    print('setting catppuccin')
+    vim.g.catppuccin_flavour = 'mocha'
+    local colors = require("catppuccin.palettes").get_palette()
+    catppuccin.setup({
+        transparent_background = true,
+        term_colors = true,
+        integrations = {
+            gitgutter = true,
+        },
+        custom_highlights = {
+            CursorLine = { bg = colors.surface0 },
+        }
 
-local gruvbox_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not gruvbox_ok then
-    print("Colorscheme " .. colorscheme .. " not found")
-else
-    -- gruvbox theme exists so we can set a couple options
-    vim.g["gruvbox_italic"] = 1             -- enable italics
-    vim.g["gruvbox_sign_column"] = "bg0"    -- no background for signcolumn
+    })
+
+    vim.cmd [[colorscheme catppuccin]]
 end
 
 local set = vim.opt
@@ -21,4 +30,14 @@ vim.cmd [[highlight Normal guibg=none]] -- transparent background
 -- column 121 highlight
 vim.cmd [[highlight ColorColumn ctermbg=1]]
 set.colorcolumn = "121"
+
+
+-- local colorscheme = "gruvbox"
+-- local gruvbox_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+-- if not gruvbox_ok then
+--     print("Colorscheme " .. colorscheme .. " not found")
+-- else  -- gruvbox theme exists so we can set a couple options
+--     vim.g["gruvbox_italic"] = 1             -- enable italics
+--     vim.g["gruvbox_sign_column"] = "bg0"    -- no background for signcolumn
+-- end
 
