@@ -1,15 +1,7 @@
 local set = vim.opt
 
 set.timeoutlen = 500
-
--- theme
-set.termguicolors = true    -- true colors
-set.cursorline = true       -- highlight cursor line
 set.syntax = "on"           -- enable syntax
-set.showmode = false        -- don't show mode
-
-set.background = "dark"                 -- dark background
-vim.cmd [[highlight Normal guibg=none]] -- transparent background
 
 -- tabs
 set.expandtab = true        -- tabs are spaces
@@ -30,10 +22,6 @@ set.ic = true               -- ignore case when searching
 -- splitting
 set.splitright = true       -- split window to right
 set.splitbelow = true       -- split window to below
-
--- column 121 highlight
-vim.cmd [[highlight ColorColumn ctermbg=1]]
-set.colorcolumn = "121"
 
 -- make files should not expand tabs to spaces
 vim.cmd [[autocmd FileType make setlocal noexpandtab]]
