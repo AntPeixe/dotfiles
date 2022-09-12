@@ -2,6 +2,7 @@ local set = vim.opt
 
 set.timeoutlen = 500
 set.syntax = "on"           -- enable syntax
+set.updatetime = 100
 
 -- tabs
 set.expandtab = true        -- tabs are spaces
