@@ -16,7 +16,6 @@ if not catppuccin_ok then
     return
 end
 
-print('setting catppuccin')
 vim.g.catppuccin_flavour = 'mocha'
 local colors = require("catppuccin.palettes").get_palette()
 catppuccin.setup({
@@ -28,7 +27,6 @@ catppuccin.setup({
     custom_highlights = {
         CursorLine = { bg = colors.surface0 },
     }
-
 })
 
 vim.cmd [[colorscheme catppuccin]]
