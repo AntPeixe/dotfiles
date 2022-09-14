@@ -26,6 +26,7 @@ catppuccin.setup({
     },
     custom_highlights = {
         CursorLine = { bg = colors.surface0 },
+        LineNr = { fg = colors.lavender },  -- all LineNr equal to CursorLineNr
     }
 })
 
