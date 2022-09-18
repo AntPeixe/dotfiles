@@ -3,7 +3,6 @@ if not status_ok then
   return
 end
 
-telescope.load_extension('media_files')
 telescope.load_extension('fzf')
 
 local telescopeConfig = require("telescope.config")
@@ -69,7 +68,6 @@ telescope.setup {
     find_files = { find_command = { "fd", "--type=file", "--hidden", "--strip-cwd-prefix", "--exclude", ".git/*" } },
   },
   extensions = {
-    media_files = { filetypes = {"png", "webp", "jpg", "jpeg", "pdf"}, find_cmd = "rg" },
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
       override_generic_sorter = true,  -- override the generic sorter
