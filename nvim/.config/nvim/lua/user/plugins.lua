@@ -43,7 +43,7 @@ local packer_start = packer.startup(function(use)
 
   -- git
   use "tpope/vim-fugitive"        -- git bar and commands
-  use "airblade/vim-gitgutter"    -- git line changes
+  use 'lewis6991/gitsigns.nvim'
 
   -- completion
   use 'hrsh7th/nvim-cmp'
