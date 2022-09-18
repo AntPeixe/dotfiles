@@ -50,3 +50,4 @@ vim.g["python3_host_prog"] = "/usr/bin/python3"
 
 -- make sure `dockerfile` (lower case D) is detected as dockerfile type
 vim.cmd [[ autocmd BufRead,BufNewFile *dockerfile* set filetype=dockerfile ]]
+vim.cmd [[ autocmd BufRead,BufNewFile dockerfile set filetype=dockerfile ]]
