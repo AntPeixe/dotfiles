@@ -12,3 +12,5 @@ require "user.mason"
 require "user.lsp"
 
 require "user.telescope"
+
+require "user.treesitter"

@@ -66,6 +66,12 @@ local packer_start = packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+  }
+
 end)
 
 return packer_start
