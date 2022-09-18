@@ -37,3 +37,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Ctrl+Enter to execute script and F5 to run tests on file
 vim.cmd [[autocmd FileType python nnoremap <buffer> <C-CR> :w<cr>:exec '!python' shellescape(expand('%:p'), 1)<cr>]]
 vim.cmd [[autocmd FileType python nnoremap <buffer> <F5> :w<cr>:exec '!pytest' shellescape(expand('%:p'), 1)<cr>]]
+
+-- Telescope
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)

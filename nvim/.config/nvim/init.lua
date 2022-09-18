@@ -10,3 +10,5 @@ require "user.lualine"
 require "user.cmp"
 require "user.mason"
 require "user.lsp"
+
+require "user.telescope"

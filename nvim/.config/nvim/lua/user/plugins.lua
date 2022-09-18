@@ -27,20 +27,23 @@ local packer_start = packer.startup(function(use)
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
 
+  -- Dependencies for a variety of plugings
+  use "nvim-lua/popup.nvim"
+  use "nvim-lua/plenary.nvim"
+  use 'kyazdani42/nvim-web-devicons'
+
+  -- Theme
   use {
     'catppuccin/nvim',
     as = 'catppuccin',
     run = ':CatppuccinCompile'
   }
-
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
+  use 'nvim-lualine/lualine.nvim'
+  use 'kyazdani42/nvim-tree.lua'
 
   -- git
-  use "tpope/vim-fugitive"                  -- git bar and commands
-  use "airblade/vim-gitgutter"              -- git line changes
+  use "tpope/vim-fugitive"        -- git bar and commands
+  use "airblade/vim-gitgutter"    -- git line changes
 
   -- completion
   use 'hrsh7th/nvim-cmp'
@@ -57,12 +60,12 @@ local packer_start = packer.startup(function(use)
   -- LSP
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-  use "neovim/nvim-lspconfig"           -- enables LSP
+  use "neovim/nvim-lspconfig"
 
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {'kyazdani42/nvim-web-devicons'}  -- for file icons
-  }
+  -- Telescope
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-media-files.nvim'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
 end)
 
