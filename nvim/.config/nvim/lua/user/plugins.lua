@@ -12,7 +12,7 @@ if not status_ok then
     return
 end
 
--- Have packer use a popup window
+-- Use pop-up window for packer
 packer.init {
   display = {
     open_fn = function()
