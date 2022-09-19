@@ -37,3 +37,15 @@ configs.setup {
     },
   },
 }
+
+local ts_ctx_status, ts_ctx = pcall(require, 'treesitter-context')
+if ts_ctx_status then
+    ts_ctx.setup {
+        separator = '-',
+        patterns = {
+            python = {
+                'with'
+            },
+        },
+    }
+end
