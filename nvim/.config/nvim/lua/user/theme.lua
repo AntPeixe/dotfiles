@@ -25,7 +25,17 @@ catppuccin.setup({
         enabled = true,
     },
     integrations = {
-        gitgutter = true,
+        gitsigns = true,
+        treesitter = true,
+        telescope = true,
+        native_lsp = {
+            enabled = true,
+        },
+        neotree = {
+            enabled = true,
+            show_root = true,
+            transparent_panel = false,
+        },
     },
     custom_highlights = {
         CursorLine = { bg = colors.surface0 },
