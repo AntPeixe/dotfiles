@@ -16,26 +16,6 @@ configs.setup {
   },
 
   -- indent = { enable = true, disable = { "yaml" } },
-
-  textobjects = {  -- for nvim-treesitter-textobjects
-    select = {
-      enable = true,
-      lookahead = true,     -- Automatically jump forward to textobj, similar to targets.vim
-      keymaps = {
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-      },
-      -- You can choose the select mode (default is charwise 'v')
-      selection_modes = {
-        ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
-        ['@class.outer'] = '<c-v>', -- blockwise
-      },
-      include_surrounding_whitespace = false,
-    },
-  },
 }
 
 local ts_ctx_status, ts_ctx = pcall(require, 'treesitter-context')
