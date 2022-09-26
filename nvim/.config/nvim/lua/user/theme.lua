@@ -1,8 +1,5 @@
 local set = vim.opt
 -- theme
-set.termguicolors = true    -- true colors
-set.cursorline = true       -- highlight cursor line
-set.showmode = false        -- don't show mode
 
 set.background = "dark"                 -- dark background
 vim.cmd [[highlight Normal guibg=none]] -- transparent background

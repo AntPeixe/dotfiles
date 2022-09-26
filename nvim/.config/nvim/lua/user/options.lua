@@ -1,5 +1,9 @@
 local set = vim.opt
 
+set.termguicolors = true    -- true colors
+set.cursorline = true       -- highlight cursor line
+set.showmode = false        -- don't show mode
+
 set.timeoutlen = 500
 set.syntax = "on"           -- enable syntax
 set.updatetime = 100
