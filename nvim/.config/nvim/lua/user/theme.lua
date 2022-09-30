@@ -21,6 +21,22 @@ catppuccin.setup({
     compile = {
         enabled = true,
     },
+
+    styles = {
+		comments = { "italic" },
+		conditionals = {},
+		loops = {},
+		functions = { "bold" },
+		keywords = {},
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
+	},
+
     integrations = {
         gitsigns = true,
         treesitter = true,
