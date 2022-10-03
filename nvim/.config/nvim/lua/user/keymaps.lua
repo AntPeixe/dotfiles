@@ -34,3 +34,11 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+
+-- Git
+keymap("n", "<leader>gi", ":Git<CR>", opts)
+keymap("n", "<leader>gs", ":Gdiffsplit<CR>", opts)
+keymap("n", "<leader>gb", ":Git blame<CR>", opts)
+keymap("n", "<leader>gc", ":Git commit<CR>", opts)
+keymap("n", "<leader>gd", ":Git diff --cached<CR>", opts)
+

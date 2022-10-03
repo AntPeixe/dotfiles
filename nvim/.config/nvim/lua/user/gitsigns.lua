@@ -42,8 +42,6 @@ gitsigns.setup {
     map('n', '<leader>hd', gs.diffthis)
     map('n', '<leader>ht', gs.toggle_deleted)
 
-    map('n', '<leader>hb', function() gs.blame_line{full=true} end)
-
     -- Text object
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
