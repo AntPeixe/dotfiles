@@ -31,5 +31,6 @@ vim.cmd [[autocmd FileType python nnoremap <buffer> <F5> :w<cr>:exec '!python' s
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>fr", ":Telescope grep_string<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
