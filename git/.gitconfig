@@ -3,10 +3,13 @@
 	name = Antonio Peixe
 
 [init]
-    defaultBranch = master
+    defaultBranch = main
 
 [pull]
     rebase = true
+
+[push]
+    autoSetupRemote = true
 
 [core]
     editor = nvim
