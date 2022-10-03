@@ -6,7 +6,7 @@ end
 lualine.setup {
     options = {icons_enabled=true, theme='auto'},
     sections = {
-        lualine_c = { {'filename', file_status=true, path=0} },
+        lualine_c = { {'filename', file_status=true, path=1} },
         lualine_x = {'encoding', 'filetype'},
     },
     tabline = {
