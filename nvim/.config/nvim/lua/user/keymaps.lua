@@ -42,5 +42,5 @@ keymap("n", "<leader>gb", ":Git blame<CR>", opts)
 keymap("n", "<leader>gc", ":Git commit<CR>", opts)
 keymap("n", "<leader>gd", ":Git diff --cached<CR>", opts)
 keymap("n", "<leader>gp", ":Git push<CR>", opts)
-
+keymap("n", "<leader>gl", ":Git pull<CR>", opts)
 
