@@ -37,10 +37,10 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gi", ":Git<CR>", opts)
-keymap("n", "<leader>gs", ":Gdiffsplit<CR>", opts)
+keymap("n", "<leader>gd", ":Gdiffsplit<CR>", opts)
+keymap("n", "<leader>gs", ":Git diff --cached<CR>", opts)
 keymap("n", "<leader>gb", ":Git blame<CR>", opts)
 keymap("n", "<leader>gc", ":Git commit<CR>", opts)
-keymap("n", "<leader>gd", ":Git diff --cached<CR>", opts)
 keymap("n", "<leader>gp", ":Git push<CR>", opts)
 keymap("n", "<leader>gl", ":Git pull<CR>", opts)
 
