@@ -44,3 +44,6 @@ keymap("n", "<leader>gc", ":Git commit<CR>", opts)
 keymap("n", "<leader>gp", ":Git push<CR>", opts)
 keymap("n", "<leader>gl", ":Git pull<CR>", opts)
 
+-- Buffers
+keymap("n", "<leader>bw", ":bwipeout<CR>", opts)
+
