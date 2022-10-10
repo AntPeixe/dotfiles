@@ -18,7 +18,7 @@ telescope.setup {
 
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { shorten = { len = 5, exclude = {1, -1} } },
+    path_display = { shorten = { len = 10, exclude = {1, -1} } },
     vimgrep_arguments = vimgrep_arguments,
 
     mappings = {
