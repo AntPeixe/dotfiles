@@ -1,3 +1,5 @@
+pcall(require, 'impatient')
+
 require "user.plugins"
 
 require "user.theme"

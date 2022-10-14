@@ -27,6 +27,9 @@ local packer_start = packer.startup(function(use)
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
 
+  -- Faster loading
+  use 'lewis6991/impatient.nvim'
+
   -- Dependencies for a variety of plugings
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
