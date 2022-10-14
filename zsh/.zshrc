@@ -44,7 +44,8 @@ fi
 ###############
 ### PROMPT ###
 ###############
-PROMPT='$(kube_ps1)'$PROMPT
+PROMPT='$(kube_ps1) %{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%}%{$GIT_PROMPT_INFO%}$(git_prompt_info)$(virtualenv_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}
+%{$PROMPT_PROMPT%}ᐅ %{$reset_color%}'
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi  # kubectl autocompletion
 
 
