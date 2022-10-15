@@ -79,6 +79,9 @@ local packer_start = packer.startup(function(use)
   -- Comment toggling
   use 'numToStr/Comment.nvim'
 
+  -- Nicer notifications
+  use 'rcarriga/nvim-notify'
+
 end)
 
 return packer_start
