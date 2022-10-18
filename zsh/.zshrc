@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Theme
-ZSH_THEME="muse"
+ZSH_THEME="awesomepanda"
 DEFAULT_USER=$USER
 
 # Auto-update (in days).
@@ -20,7 +20,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.mm.yyyy"
 
 # oh-my-zsh plugins
-plugins=(git kube-ps1 colored-man-pages kubectl)
+plugins=(git colored-man-pages kubectl)
 source $ZSH/oh-my-zsh.sh
 
 
@@ -40,13 +40,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-
-###############
-### PROMPT ###
-###############
-PROMPT='$(kube_ps1) %{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%}%{$GIT_PROMPT_INFO%}$(git_prompt_info)$(virtualenv_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}
-%{$PROMPT_PROMPT%}ᐅ %{$reset_color%}'
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi  # kubectl autocompletion
+# kubectl autocompletion
+if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 
 ###############
@@ -62,6 +57,7 @@ profile=$HOME/.zsh_profile
 if [[ -f "$profile" ]]; then
     source $profile
 fi
+
 envs=$HOME/.envs
 if [[ -f "$envs" ]]; then
     source $envs
