@@ -1,0 +1,121 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=~/.config/i3blocks/blocklets/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# ---------
+# ---------
+
+[kubernetes]
+interval=10
+color=#94E2D5
+
+[docker]
+color=#0db7ed
+interval=10
+LABEL= 
+
+# ---------
+# ---------
+
+# Volume indicator
+[volume]
+label=墳 
+interval=once
+signal=10
+
+# Mic indicator
+[miccontrol]
+SOURCE=alsa_input.pci-0000_00_1f.3.analog-stereo
+interval=once
+signal=10
+
+[backlight]
+label=☀ 
+interval=once
+signal=10
+#STEP_SIZE=5
+#USE_SUDO=0
+
+# ---------
+# ---------
+
+# Memory usage
+[memory]
+label= 
+interval=30
+PERCENT=False
+
+# CPU usage
+[cpu_usage]
+label= 
+interval=10
+
+# Temps
+[temperature]
+label= 
+interval=10
+
+# ---------
+# ---------
+
+[wifi]
+INTERFACE=wlp4s0
+label=  
+interval=10
+
+[nm-vpn]
+init_color=#FFFF00
+on_color=#00FF00
+label=VPN: 
+interval=5
+
+# Battery indicator
+[batterybar]
+label= 
+interval=5
+markup=pango
+min_width=bat: ■■■■■
+
+# ---------
+# ---------
+
+[arch-update]
+command=~/.config/i3blocks/blocklets/$BLOCK_NAME/$BLOCK_NAME --aur_yay --quiet
+interval=3600
+markup=pango
+LABEL= 
+
+# ---------
+# ---------
+
+# Date Time
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=5

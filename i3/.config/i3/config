@@ -1,0 +1,248 @@
+# On keyboard layout change re-run i3-config-wizard(1).
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+font pango:JetBrainsMono Nerd Font, Medium 8
+
+
+# ------------------------------------------
+# Initial execs
+# ------------------------------------------
+
+# Start XDG autostart .desktop files using dex. See https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# lock (and screen off) in 10min and suspend in 15min
+exec --no-startup-id xautolock -time 15 -locker 'systemctl suspend' -notify 600 -notifier 'i3lock | xset dpms force off' &
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+# exec --no-startup-id nm-applet
+
+
+# ------------------------------------------
+# Bindings
+# ------------------------------------------
+
+# change volume or toggle set-source-mute `-RTMIN+10` must match the setting in i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+
+# toggle mic mute
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && pkill -RTMIN+10 i3blocks
+
+# change screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 && pkill -RTMIN+10 i3blocks
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 && pkill -RTMIN+10 i3blocks
+
+# start a terminal
+bindsym $mod+Return exec alacritty
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# rofi
+bindsym $mod+d exec "rofi -show drun"
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal/vertical orientation
+bindsym $mod+z split v
+bindsym $mod+v split h
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+# bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# suspend
+bindsym $mod+Shift+period exec systemctl suspend
+
+# setup monitors
+bindsym $mod+p exec xrandr --output eDP1 --auto --primary && nitrogen --restore
+bindsym $mod+Shift+p exec xrandr --output eDP1 --auto --output HDMI1 --auto --primary --left-of eDP1 && nitrogen --restore
+
+# region selected print screen
+bindsym $mod+Print exec maim -s | xclip -selection clipboard -t image/png
+
+
+# ------------------------------------------
+# Workspaces
+# ------------------------------------------
+
+# Define names for default workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move workspace to different output
+bindsym $mod+m move workspace to output right
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# bind applications to workspaces
+assign [class="alacritty"] $ws1
+assign [class="Brave-browser"] $ws2
+assign [class="Slack"] $ws3
+
+# bind workspaces to outputs
+workspace 1 output HDMI1 eDP1
+workspace 2 output HDMI1 eDP1
+workspace 3 output eDP1
+
+
+# ------------------------------------------
+# i3bar
+# ------------------------------------------
+
+bar {
+    position top
+    i3bar_command i3bar --transparency
+    status_command i3blocks
+    tray_output primary
+    tray_padding 0
+    font pango:JetBrainsMono Nerd Font, Medium 9
+    separator_symbol "  "
+
+    colors {
+        background #000000aa
+        statusline #ffffffff
+        separator #666666ff
+    }
+}
+
+
+# ------------------------------------------
+# Colors
+# ------------------------------------------
+
+# catppuccin teal
+set $bg-color #94E2D5
+set $text-color #CFDBD5
+set $inactive-bg-color #333533
+set $inactive-text-color #E8EDDF
+set $urgent-text #F5CB5C
+# catppuccin lavender
+set $indicator-color #B4BEFE
+
+				            #border			        background		        text			        indicator
+client.focused              $bg-color		        $bg-color		        $text-color 		    $indicator-color
+client.unfocused            $inactive-bg-color      $inactive-bg-color      $inactive-text-color    $indicator-color 
+client.focused_inactive  	$inactive-bg-color     	$inactive-bg-color      $inactive-text-color    $indicator-color
+client.urgent  			    $inactive-bg-color      $inactive-bg-color      $urgent-text     	    $indicator-color
+
+# Remove borders - from ThePrimeagen
+for_window [class="^.*"] border pixel 2
+
+
+# ------------------------------------------
+# Final execs
+# ------------------------------------------
+
+exec_always --no-startup-id picom &
+exec_always --no-startup-id sleep 1 && nitrogen --restore
+
+exec --no-startup-id ssh-agent &
+exec --no-startup-id redshift &
+
+exec alacritty
+exec brave
+

@@ -1,3 +1,6 @@
 [submodule "alacritty/.config/alacritty/catppuccin"]
 	path = alacritty/.config/alacritty/catppuccin
 	url = https://github.com/catppuccin/alacritty.git
+[submodule "i3/.config/i3blocks/blocklets"]
+	path = i3/.config/i3blocks/blocklets
+	url = https://github.com/antpeixe/i3blocks-contrib.git
