@@ -1,0 +1,20 @@
+configuration{
+    modes: "run,drun,filebrowser,window";
+    icon-theme: "Papirus";
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    terminal: "alacritty";
+    matching: "fuzzy";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: "   Windows";
+    display-filebrowser: "   Files";
+    sidebar-mode: true;
+}
+
+@theme "catppuccin-mocha"
+
