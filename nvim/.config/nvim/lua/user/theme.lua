@@ -6,7 +6,7 @@ vim.cmd [[highlight Normal guibg=none]] -- transparent background
 
 -- column 121 highlight
 vim.cmd [[highlight ColorColumn ctermbg=1]]
-set.colorcolumn = "121"
+set.colorcolumn = "80,120"
 
 local catppuccin_ok, catppuccin = pcall(require, "catppuccin")
 if not catppuccin_ok then
