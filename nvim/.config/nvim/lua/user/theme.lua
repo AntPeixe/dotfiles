@@ -41,31 +41,18 @@ catppuccin.setup({
         gitsigns = true,
         treesitter = true,
         telescope = true,
+        nvimtree = true,
         native_lsp = {
             enabled = true,
         },
-        neotree = {
-            enabled = true,
-            show_root = true,
-            transparent_panel = false,
-        },
     },
+
     custom_highlights = {
         CursorLine = { bg = colors.surface0 },
         LineNr = { fg = colors.lavender },  -- all LineNr equal to CursorLineNr
     }
+
 })
 
 vim.cmd [[colorscheme catppuccin]]
-
-
-
--- local colorscheme = "gruvbox"
--- local gruvbox_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
--- if not gruvbox_ok then
---     print("Colorscheme " .. colorscheme .. " not found")
--- else  -- gruvbox theme exists so we can set a couple options
---     vim.g["gruvbox_italic"] = 1             -- enable italics
---     vim.g["gruvbox_sign_column"] = "bg0"    -- no background for signcolumn
--- end
 
