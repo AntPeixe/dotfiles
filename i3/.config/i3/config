@@ -119,9 +119,9 @@ bindsym $mod+Print exec maim -s | xclip -selection clipboard -t image/png
 # ------------------------------------------
 
 # Define names for default workspaces
-set $ws1 "1: "
-set $ws2 "2: 爵"
-set $ws3 "3: "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
