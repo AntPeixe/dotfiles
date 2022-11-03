@@ -41,8 +41,6 @@ set.lcs="tab:>-,trail:-"
 set.undodir  = os.getenv("HOME") .. '/.cache/nvim/undo'
 set.undofile = true                -- see :help undodir and :help undofile
 
-set.diffopt.extends="vertical" 	   -- diff vertical split for easier comparison
-
 -- netrw tweaks
 vim.g["netrw_liststyle"] = 3
 vim.g["netrw_banner"] = 0
