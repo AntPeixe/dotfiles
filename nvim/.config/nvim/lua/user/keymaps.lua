@@ -37,13 +37,17 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gi", ":Git<CR>", opts)
-keymap("n", "<leader>gd", ":Gdiffsplit<CR>", opts)
+keymap("n", "<leader>gd", ":Gvdiffsplit!<CR>", opts)
 keymap("n", "<leader>gs", ":Git diff --cached<CR>", opts)
 keymap("n", "<leader>gb", ":Git blame<CR>", opts)
 keymap("n", "<leader>gc", ":Git commit<CR>", opts)
+keymap("n", "<leader>go", ":Git checkout", opts)
 keymap("n", "<leader>gp", ":Git push<CR>", opts)
 keymap("n", "<leader>gl", ":Git pull<CR>", opts)
 
 -- Buffers
 keymap("n", "<leader>bw", ":bwipeout<CR>", opts)
+keymap("n", "<leader>bW", ":%bwipeout<CR>", opts)
 
+-- Paste over without lossing registry (from ThePrimeagen dotfiles)
+keymap("x", "<leader>p", "\"_dP", opts)
