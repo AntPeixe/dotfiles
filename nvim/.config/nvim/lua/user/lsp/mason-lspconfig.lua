@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 mason_lspconfig.setup({
-    ensure_installed = { "sumneko_lua", "pyright" },
+    ensure_installed = { "sumneko_lua", "pyright", "rust_analyzer" },
     automatic_installation = true,
 })
 
