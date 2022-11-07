@@ -1,7 +1,7 @@
 local set = vim.opt
 -- theme
 
-set.background = "dark"                 -- dark background
+set.background = "dark" -- dark background
 vim.cmd [[highlight Normal guibg=none]] -- transparent background
 
 -- column 121 highlight
@@ -23,19 +23,19 @@ catppuccin.setup({
     },
 
     styles = {
-		comments = { "italic" },
-		conditionals = {},
-		loops = {},
-		functions = { "bold" },
-		keywords = {},
-		strings = {},
-		variables = {},
-		numbers = {},
-		booleans = {},
-		properties = {},
-		types = {},
-		operators = {},
-	},
+        comments = { "italic" },
+        conditionals = {},
+        loops = {},
+        functions = { "bold" },
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
 
     integrations = {
         gitsigns = true,
@@ -45,14 +45,17 @@ catppuccin.setup({
         native_lsp = {
             enabled = true,
         },
+        dap = {
+            enabled = true,
+            enable_ui = true, -- enable nvim-dap-ui
+        }
     },
 
     custom_highlights = {
         CursorLine = { bg = colors.surface0 },
-        LineNr = { fg = colors.lavender },  -- all LineNr equal to CursorLineNr
+        LineNr = { fg = colors.lavender }, -- all LineNr equal to CursorLineNr
     }
 
 })
 
 vim.cmd [[colorscheme catppuccin]]
-
