@@ -1,17 +1,19 @@
 pcall(require, 'impatient')
 
+require "user.options"
+
 require "user.plugins"
 
-require "user.theme"
-require "user.options"
 require "user.keymaps"
 
+require "user.theme"
 require "user.explorer"
 require "user.lualine"
 
 require "user.cmp"
 require "user.mason"
 require "user.lsp"
+require "user.dap"
 
 require "user.telescope"
 

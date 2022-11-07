@@ -24,18 +24,18 @@ packer.init {
 -- Plugins
 local packer_start = packer.startup(function(use)
 
-  -- Packer can manage itself
+  -- packer can manage itself
   use "wbthomason/packer.nvim"
 
-  -- Faster loading
+  -- faster loading
   use 'lewis6991/impatient.nvim'
 
-  -- Dependencies for a variety of plugings
+  -- dependencies for a variety of plugings
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
   use 'kyazdani42/nvim-web-devicons'
 
-  -- Theme
+  -- theme
   use {
     'catppuccin/nvim',
     as = 'catppuccin',
@@ -65,22 +65,30 @@ local packer_start = packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
 
-  -- Telescope
+  -- telescope
   use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-  -- Treesitter
+  -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  -- Comment toggling
+  -- comment toggling
   use 'numToStr/Comment.nvim'
 
-  -- Nicer notifications
+  -- nicer notifications
   use 'rcarriga/nvim-notify'
+
+  -- debugging
+  use {
+      'rcarriga/nvim-dap-ui',
+      requires = 'mfussenegger/nvim-dap'
+  }
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'mfussenegger/nvim-dap-python'
 
 end)
 
