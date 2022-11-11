@@ -34,7 +34,7 @@ telescope.setup {
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
       },
 
       n = {
@@ -51,7 +51,7 @@ telescope.setup {
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 
-        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
         ["?"] = actions.which_key,
       },
