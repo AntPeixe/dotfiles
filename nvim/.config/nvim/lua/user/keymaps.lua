@@ -15,16 +15,14 @@ keymap("n", "<C-K>", "<C-W><C-K>", opts)
 keymap("n", "<C-L>", "<C-W><C-L>", opts)
 keymap("n", "<C-H>", "<C-W><C-H>", opts)
 
+-- center screen on vertical movement
 keymap("n", "<C-D>", "<C-D>z.", opts)
 keymap("n", "<C-U>", "<C-U>z.", opts)
+keymap("n", "n", "nzz", opts)  -- on search center screen but keep cursor column
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- PYTHON MAPS
--- F5 run python file
--- vim.cmd [[autocmd FileType python nnoremap <buffer> <F5> :w<cr>:exec '!python' shellescape(expand('%:p'), 1)<cr>]]
 
 -- Buffers
 keymap("n", "<leader>w", ":bwipeout<CR>", opts)
@@ -50,6 +48,7 @@ keymap("n", "<leader>gc", ":Git commit<CR>", opts)
 keymap("n", "<leader>go", ":Git checkout", opts)
 keymap("n", "<leader>gp", ":Git push<CR>", opts)
 keymap("n", "<leader>gl", ":Git pull<CR>", opts)
+keymap("n", "<leader>gg", ":Git log --oneline --decorate --graph<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
