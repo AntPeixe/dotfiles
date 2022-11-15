@@ -1,28 +1,6 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# Theme
-ZSH_THEME="awesomepanda"
 DEFAULT_USER=$USER
-
-# Auto-update (in days).
-export UPDATE_ZSH_DAYS=13
-
-# Enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd.mm.yyyy"
-
-# oh-my-zsh plugins
-plugins=(git colored-man-pages kubectl)
-source $ZSH/oh-my-zsh.sh
-
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -40,26 +18,51 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# kubectl autocompletion
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+## ---------------------------
+## Exports
+## ---------------------------
+# export TERM="screen-256color"
 
-
-###############
-### Exports ###
-###############
-export TERM="xterm-256color"  # Support for 256 color schemes
-
-
-################
-### SOURCING ###
-################
+## ---------------------------
+## Sourcing
+## ---------------------------
 profile=$HOME/.zsh_profile
 if [[ -f "$profile" ]]; then
     source $profile
 fi
-
 envs=$HOME/.envs
 if [[ -f "$envs" ]]; then
     source $envs
 fi
+
+## ---------------------------
+## Plugins
+## ---------------------------
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
+# [ -f "$HOME/projects/zap/zap.zsh" ] && source "$HOME/projects/zap/zap.zsh"
+plug "zap-zsh/supercharge"
+plug "zap-zsh/vim"
+plug "hlissner/zsh-autopair"
+plug "DarrinTisdale/zsh-aliases-exa"
+
+plug "zap-zsh/zap-prompt"
+
+# keep these plugins at the end
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-history-substring-search"
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+## History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt share_history          # share command history data
+
 
