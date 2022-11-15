@@ -19,21 +19,24 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 ## ---------------------------
-## Exports
-## ---------------------------
-# export TERM="screen-256color"
-
-## ---------------------------
 ## Sourcing
 ## ---------------------------
-profile=$HOME/.zsh_profile
-if [[ -f "$profile" ]]; then
-    source $profile
-fi
-envs=$HOME/.envs
-if [[ -f "$envs" ]]; then
-    source $envs
-fi
+[[ -f $HOME/.envs ]] && . $HOME/.envs
+[[ -f $HOME/.zsh_aliases ]] && . $HOME/.zsh_aliases
+
+# fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export FZF_COMPLETION_TRIGGER='~~'
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+## ---------------------------
+## Path
+## ---------------------------
+PATH=$HOME/.local/bin/:$PATH
+PATH=$HOME/.local/scripts/:$PATH
+PATH=$HOME/.krew/bin/:$PATH
+export PATH
 
 ## ---------------------------
 ## Plugins
@@ -51,6 +54,13 @@ plug "zap-zsh/zap-prompt"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
+
+## ---------------------------
+## Keymaps
+## ---------------------------
+
+# ctrl+f to tmux-sessionizer
+bindkey -s '^f' "tmux-sessionizer\n"  
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down

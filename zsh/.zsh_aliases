@@ -1,0 +1,20 @@
+# tmux
+alias tmux='tmux -u -2'
+alias ta='tmux attach -t'
+alias tnew='tmux new -s'
+alias tls='tmux ls'
+alias tkill='tmux kill-session -t'
+
+# python venvs
+alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
+alias de='deactivate'
+
+# neovim
+alias v='nvim'
+alias vim='nvim'
+alias \"vim\"='vim'
+
+# kubectl / kubectx
+alias ku='kubectx -u'  # unset context
+alias krc='kubectl resource-capacity'
+
