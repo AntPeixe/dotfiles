@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+YEAR=$1
+DAY=$2
+
+DAY=${DAY:=$(date +%d)}  # 0 padded day for better directories
+YEAR=${YEAR:=$(date +%Y)}
+
+# AOC uses non-padded days
+TRIM_DAY=$(echo $DAY | sed 's/^0//g')
+CHALLENGE="https://adventofcode.com/$YEAR/day/$TRIM_DAY" 
+
+mkdir --parents $DAY
+wget --quiet "$CHALLENGE/input" --no-cookies --header "Cookie: session=${SESSION_COOKIE_AOC}" -O "./$DAY/input.txt"
+
+echo 'with open("input.txt") as f:
+    data = f.read()
+' >> "./$DAY/part1.py"
+cp "./$DAY/part1.py" "./$DAY/part2.py"
+
+# I use brave, you may have to change to your browser
+brave $CHALLENGE
+
