@@ -14,7 +14,7 @@ M.setup = function()
     end
 
     local diag_config = {
-        virtual_text = false, -- disable virtual text
+        virtual_text = true,
         signs = { active = signs }, -- show signs
         severity_sort = true,
         float = {
