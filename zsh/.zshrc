@@ -17,23 +17,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 ## ---------------------------
-## Sourcing
-## ---------------------------
-[[ -f $HOME/.envs ]] && . $HOME/.envs
-[[ -f $HOME/.zsh_aliases ]] && . $HOME/.zsh_aliases
-
-# fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-export FZF_COMPLETION_TRIGGER='~~'
-export FZF_DEFAULT_COMMAND='fd --type f'
-
-## ---------------------------
 ## Path
 ## ---------------------------
 PATH=$HOME/.local/bin/:$PATH
 PATH=$HOME/.local/scripts/:$PATH
-PATH=$HOME/.krew/bin/:$PATH
 export PATH
 
 ## ---------------------------
@@ -43,6 +30,7 @@ export PATH
 # [ -f "$HOME/projects/zap/zap.zsh" ] && source "$HOME/projects/zap/zap.zsh"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/vim"
+plug "zap-zsh/fzf"
 plug "hlissner/zsh-autopair"
 plug "DarrinTisdale/zsh-aliases-exa"
 
@@ -65,3 +53,13 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+## ---------------------------
+## Sourcing
+## ---------------------------
+[[ -f $HOME/.envs ]] && . $HOME/.envs
+[[ -f $HOME/.zsh_aliases ]] && . $HOME/.zsh_aliases
+source <(kubectl completion zsh)
+
+# fzf
+export FZF_COMPLETION_TRIGGER='~~'
+export FZF_DEFAULT_COMMAND='fd --type f'
