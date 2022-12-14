@@ -8,13 +8,10 @@ else
 fi
 
 # pyenv config
+#
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 ## ---------------------------
 ## Path
@@ -63,8 +60,17 @@ source <(kubectl completion zsh)
 # fzf
 export FZF_COMPLETION_TRIGGER='~~'
 export FZF_DEFAULT_COMMAND='fd --type f'
+# catppuccin colors for fzf
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
+## ---------------------------
+## Other
+## ---------------------------
 
+# keychain
 keychain --nogui --noask --confhost --quiet id_rsa id_ed25519
 [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && . $HOME/.keychain/$HOSTNAME-sh
