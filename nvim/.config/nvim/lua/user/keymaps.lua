@@ -19,6 +19,7 @@ keymap("n", "<C-H>", "<C-W><C-H>", opts)
 keymap("n", "<C-D>", "<C-D>z.", opts)
 keymap("n", "<C-U>", "<C-U>z.", opts)
 keymap("n", "n", "nzz", opts)  -- on search center screen but keep cursor column
+keymap("n", "N", "Nzz", opts)  -- on search backwards center screen but keep cursor column
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
