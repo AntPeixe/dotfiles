@@ -6,8 +6,9 @@ set.termguicolors = true    -- true colors
 set.cursorline = true       -- highlight cursor line
 set.showmode = false        -- don't show mode
 
+set.wrap = false            -- don't wrap lines
+
 set.timeoutlen = 500
-set.syntax = "on"           -- enable syntax
 set.updatetime = 100
 
 -- tabs
@@ -21,7 +22,6 @@ set.relativenumber = true   -- relative numbers
 set.number = true           -- line numbers
 set.signcolumn = "yes:2"    -- fix signcolumn with 2 columns
 
-vim.cmd [[filetype plugin indent on]]   -- file type detection
 set.smartindent = true      -- auto indent new lines
 set.showmatch = true        -- show match parenthesis/bracket
 set.ic = true               -- ignore case when searching
