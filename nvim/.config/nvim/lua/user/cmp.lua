@@ -64,7 +64,7 @@ cmp.setup({
       -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
-      ["<Tab>"] = cmp.mapping(function(fallback)
+      ["<C-j>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expand_or_jumpable() then
@@ -76,7 +76,7 @@ cmp.setup({
           end
       end, { "i", "s" }),
 
-      ["<S-Tab>"] = cmp.mapping(function(fallback)
+      ["<C-k>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
           elseif luasnip.jumpable(-1) then
@@ -144,10 +144,3 @@ cmp.setup.cmdline(':', {
       { name = 'cmdline' }
     })
 })
-
--- Setup lspconfig.
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-    -- capabilities = capabilities
--- }
