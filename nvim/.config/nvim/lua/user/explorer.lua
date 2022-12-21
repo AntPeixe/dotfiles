@@ -8,3 +8,9 @@ tree.setup {
         ignore = false
     },
 }
+
+-- <leader>+e to open vertical explorer
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
