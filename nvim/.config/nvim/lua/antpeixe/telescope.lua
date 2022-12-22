@@ -81,7 +81,7 @@ telescope.setup {
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>fr", ":Telescope grep_string<CR>", opts)
+keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
