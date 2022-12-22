@@ -1,5 +1,5 @@
-require "user.dap.ui"
-require "user.dap.settings"
+require "antpeixe.dap.ui"
+require "antpeixe.dap.settings"
 
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap

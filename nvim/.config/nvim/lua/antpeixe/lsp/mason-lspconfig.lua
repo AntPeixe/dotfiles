@@ -9,8 +9,8 @@ mason_lspconfig.setup({
 })
 
 local opts = {
-    on_attach = require("user.lsp.handler").on_attach,
-    capabilities = require("user.lsp.handler").capabilities,
+    on_attach = require("antpeixe.lsp.handler").on_attach,
+    capabilities = require("antpeixe.lsp.handler").capabilities,
 }
 
 mason_lspconfig.setup_handlers({
@@ -19,13 +19,13 @@ mason_lspconfig.setup_handlers({
     end,
 
     ["pyright"] = function ()
-        local pyright_opts = require("user.lsp.settings.pyright")
+        local pyright_opts = require("antpeixe.lsp.settings.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
         require("lspconfig").pyright.setup(opts)
     end,
 
     ["sumneko_lua"] = function ()
-        local sumneko_lua_settings = require("user.lsp.settings.sumneko_lua")
+        local sumneko_lua_settings = require("antpeixe.lsp.settings.sumneko_lua")
         opts = vim.tbl_deep_extend("force", sumneko_lua_settings, opts)
         require("lspconfig").sumneko_lua.setup(opts)
     end

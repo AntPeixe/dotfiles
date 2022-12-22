@@ -5,5 +5,5 @@ end
 
 require('lspconfig.ui.windows').default_options.border = 'rounded'
 
-require "user.lsp.mason-lspconfig"
-require("user.lsp.handler").setup()
+require "antpeixe.lsp.mason-lspconfig"
+require("antpeixe.lsp.handler").setup()
