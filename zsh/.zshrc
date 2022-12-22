@@ -18,6 +18,7 @@ eval "$(pyenv init -)"
 ## ---------------------------
 PATH=$HOME/.local/bin/:$PATH
 PATH=$HOME/.local/scripts/:$PATH
+PATH=$PATH:$HOME/.krew/bin
 export PATH
 
 ## ---------------------------
