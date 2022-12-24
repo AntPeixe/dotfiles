@@ -42,9 +42,9 @@ local function lsp_highlight_document(client)
     -- Set autocommands conditional on server_capabilities
     if client.supports_method("textDocument/documentHighlight") then
         vim.api.nvim_exec([[
-            hi LspReferenceRead guifg=Cyan guibg=Gray
-            hi LspReferenceText guifg=Cyan guibg=Gray
-            hi LspReferenceWrite guifg=Cyan guibg=Gray
+            hi LspReferenceRead guibg=Gray
+            hi LspReferenceText guibg=Gray
+            hi LspReferenceWrite guibg=Gray
             augroup lsp_document_highlight
                 autocmd! * <buffer>
                 autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
