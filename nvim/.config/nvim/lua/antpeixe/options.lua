@@ -7,6 +7,7 @@ set.cursorline = true       -- highlight cursor line
 set.showmode = false        -- don't show mode
 
 set.wrap = false            -- don't wrap lines
+set.scrolloff = 10          -- keep lines when scrolling
 
 set.timeoutlen = 500
 set.updatetime = 100
