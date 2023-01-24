@@ -9,7 +9,7 @@ font:
   normal:
     family: JetBrainsMono Nerd Font Mono
     style: Medium
-  size: 9
+  size: 8
 
 window:
   opacity: 1
