@@ -15,17 +15,5 @@ configs.setup {
     additional_vim_regex_highlighting = false,  -- required for catppuccin
   },
 
-  -- indent = { enable = true, disable = { "yaml" } },
+  indent = { enable = true },
 }
-
-local ts_ctx_status, ts_ctx = pcall(require, 'treesitter-context')
-if ts_ctx_status then
-    ts_ctx.setup {
-        separator = '-',
-        patterns = {
-            python = {
-                'with'
-            },
-        },
-    }
-end
