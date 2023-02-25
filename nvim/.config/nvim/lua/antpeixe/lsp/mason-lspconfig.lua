@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 mason_lspconfig.setup({
-    ensure_installed = { "sumneko_lua", "pyright", "rust_analyzer" },
+    ensure_installed = { "lua_ls", "pyright", "rust_analyzer" },
     automatic_installation = true,
 })
 
@@ -24,9 +24,9 @@ mason_lspconfig.setup_handlers({
         require("lspconfig").pyright.setup(opts)
     end,
 
-    ["sumneko_lua"] = function ()
-        local sumneko_lua_settings = require("antpeixe.lsp.settings.sumneko_lua")
-        opts = vim.tbl_deep_extend("force", sumneko_lua_settings, opts)
-        require("lspconfig").sumneko_lua.setup(opts)
+    ["lua_ls"] = function ()
+        local lua_ls_settings = require("antpeixe.lsp.settings.lua_ls")
+        opts = vim.tbl_deep_extend("force", lua_ls_settings, opts)
+        require("lspconfig").lua_ls.setup(opts)
     end
 })
