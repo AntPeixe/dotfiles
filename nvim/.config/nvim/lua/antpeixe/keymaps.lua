@@ -29,6 +29,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>w", ":bwipeout<CR>", opts)
 keymap("n", "<leader>W", ":%bwipeout<CR>", opts)
 
+-- Terminal
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+
 -- ThePrimeagen dotfiles
 -- Paste over without lossing registry
 keymap("x", "<leader>p", "\"_dP", opts)
