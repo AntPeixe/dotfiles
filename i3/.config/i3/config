@@ -99,7 +99,8 @@ bindsym $mod+Shift+BackSpace exec systemctl suspend
 
 # setup monitors
 bindsym $mod+p exec xrandr --output eDP1 --auto --primary --output HDMI1 --off && nitrogen --restore
-bindsym $mod+Shift+p exec xrandr --output eDP1 --auto --output HDMI1 --auto --primary --left-of eDP1 && nitrogen --restore
+# bindsym $mod+Shift+p exec xrandr --output eDP1 --auto --output HDMI1 --auto --primary --left-of eDP1 && nitrogen --restore
+bindsym $mod+Shift+p exec xrandr --output eDP1 --off --output HDMI1 --auto --primary && nitrogen --restore
 
 # region selected print screen
 bindsym $mod+Print exec maim -s | xclip -selection clipboard -t image/png
