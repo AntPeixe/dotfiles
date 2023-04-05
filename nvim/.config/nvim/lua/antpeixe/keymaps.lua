@@ -18,8 +18,8 @@ keymap("n", "<C-H>", "<C-W><C-H>", opts)
 -- center screen on vertical movement
 keymap("n", "<C-D>", "<C-D>z.", opts)
 keymap("n", "<C-U>", "<C-U>z.", opts)
-keymap("n", "n", "nzz", opts)  -- on search center screen but keep cursor column
-keymap("n", "N", "Nzz", opts)  -- on search backwards center screen but keep cursor column
+keymap("n", "n", "nzz", opts) -- on search center screen but keep cursor column
+keymap("n", "N", "Nzz", opts) -- on search backwards center screen but keep cursor column
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -36,7 +36,7 @@ keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 -- Paste over without lossing registry
 keymap("x", "<leader>p", "\"_dP", opts)
 -- yank to system clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- move selected lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

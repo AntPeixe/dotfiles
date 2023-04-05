@@ -2,7 +2,7 @@ return {
     settings = {
         Lua = {
             diagnostics = {
-                globals = {'vim'}   -- recognize vim global
+                globals = { "vim" } -- recognize vim global
             },
             workspace = {
                 -- server aware of Neovim runtime files
