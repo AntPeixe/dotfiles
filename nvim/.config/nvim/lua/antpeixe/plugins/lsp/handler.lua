@@ -42,10 +42,10 @@ local function lsp_keymaps(bufnr)
     local opts = { noremap = true, silent = true }
     buf_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
     buf_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    buf_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     buf_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
     buf_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
     buf_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+    buf_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     buf_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.cmd [[ command! Format execute "lua vim.lsp.buf.format{async=true}" ]]
 end
@@ -69,9 +69,9 @@ M.on_attach = function(_, bufnr)
     lsp_auto_diagnostic_hover(bufnr)
 end
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if status_ok then
-    M.capabilities = cmp_nvim_lsp.default_capabilities()
-end
+-- local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+-- if status_ok then
+--     M.capabilities = cmp_nvim_lsp.default_capabilities()
+-- end
 
 return M
