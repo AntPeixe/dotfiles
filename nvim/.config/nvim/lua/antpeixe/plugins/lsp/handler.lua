@@ -38,23 +38,6 @@ M.setup = function()
     })
 end
 
-local function lsp_highlight_document(client)
-    -- Set autocommands conditional on server_capabilities
-    if client.supports_method("textDocument/documentHighlight") then
-        vim.api.nvim_exec([[
-            hi LspReferenceRead guibg=Gray
-            hi LspReferenceText guibg=Gray
-            hi LspReferenceWrite guibg=Gray
-            augroup lsp_document_highlight
-                autocmd! * <buffer>
-                autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-                autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-                autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-            augroup END
-        ]], false)
-    end
-end
-
 local function lsp_keymaps(bufnr)
     local opts = { noremap = true, silent = true }
     buf_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -81,9 +64,8 @@ local function lsp_auto_diagnostic_hover(bufnr)
     })
 end
 
-M.on_attach = function(client, bufnr)
+M.on_attach = function(_, bufnr)
     lsp_keymaps(bufnr)
-    lsp_highlight_document(client)
     lsp_auto_diagnostic_hover(bufnr)
 end
 
