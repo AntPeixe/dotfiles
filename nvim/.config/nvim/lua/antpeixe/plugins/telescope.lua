@@ -6,6 +6,7 @@ return {
         { "<leader>ff", ":Telescope find_files<CR>" },
         { "<leader>fr", ":Telescope lsp_references<CR>" },
         { "<leader>fg", ":Telescope live_grep<CR>" },
+        { "<leader>fs", ":Telescope grep_string<CR>" },
         { "<leader>fb", ":Telescope buffers<CR>" },
     },
     config = function()
