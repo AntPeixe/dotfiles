@@ -5,6 +5,7 @@ return {
         git = {
             ignore = false
         },
+        sync_root_with_cwd = true,
     },
     keys = {
         { "<leader>e", ":NvimTreeFindFileToggle<CR>" },

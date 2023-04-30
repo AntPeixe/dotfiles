@@ -57,9 +57,7 @@ return {
                 end,
             },
             window = {
-                -- completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
-                -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
             },
             mapping = cmp.mapping.preset.insert({
                 ["<C-u>"] = cmp.mapping.scroll_docs(-4),

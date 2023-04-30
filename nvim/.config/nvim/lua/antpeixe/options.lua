@@ -48,12 +48,6 @@ set.lcs                     = "tab:>-,trail:-"
 set.undodir                 = os.getenv("HOME") .. "/.cache/nvim/undo"
 set.undofile                = true -- see :help undodir and :help undofile
 
--- netrw tweaks
-vim.g["netrw_liststyle"]    = 3
-vim.g["netrw_banner"]       = 0
-vim.g["netrw_browse_split"] = 4
-vim.g["netrw_winsize"]      = 25
-
 set.hidden                  = false -- hide [No Name] buffers
 
 -- Point to python3 to help load times
