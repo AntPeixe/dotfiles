@@ -9,5 +9,6 @@ return {
         { "<leader>go", ":Git checkout" },
         { "<leader>gp", ":Git push<CR>" },
         { "<leader>gl", ":Git pull<CR>" },
+        { "<leader>gg", ":Git log --oneline --decorate --graph<CR>" },
     }
 }
