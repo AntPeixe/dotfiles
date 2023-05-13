@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# the defaults shouldn't ever be really needed but anyway
+pr_review_request=$(gh search prs --state open --review-requested @me --json id --jq '. | length' || echo '-')
+pr_ready_merge=$(gh search prs --review approved --state open --checks success --involves @me --json id --jq '. | length' || echo '-')
+issues=$(gh search issues --state open --involves @me --json id --jq '. | length' || echo '-')
+notifications=$(gh api notifications --jq '. | length' || echo '-')
+echo "{\"full_text\": \"<span font='monospace 12'>:</span> $pr_ready_merge   $pr_review_request 󰍉  $issues   $notifications \"}"

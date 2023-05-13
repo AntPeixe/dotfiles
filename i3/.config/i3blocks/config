@@ -44,6 +44,16 @@ LABEL=
 # ---------
 # ---------
 
+[github_pings]
+command=~/.local/scripts/gh_pings
+interval=60
+color=#4AE25F
+format=json
+markup=pango
+
+# ---------
+# ---------
+
 # Volume indicator
 [volume]
 label= 
