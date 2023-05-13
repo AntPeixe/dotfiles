@@ -125,7 +125,12 @@ LABEL=
 # ---------
 # ---------
 
+[rofi-calendar]
+interval=3600
+BAR_POSITION=top
+LABEL= 
+
 # Date Time
 [time]
-command=date '+%Y-%m-%d %H:%M'
+command=date '+%H:%M'
 interval=5
