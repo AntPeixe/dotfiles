@@ -41,7 +41,8 @@ set.colorcolumn = "80,120"
 vim.cmd [[autocmd FileType make setlocal noexpandtab]]
 
 -- show trailing whitespaces and tabs
-set.lcs                     = "tab:>-,trail:-"
+set.list = true
+set.lcs = { trail = '~', tab = '>~' }
 
 -- undo
 -- undo persists after exiting file
