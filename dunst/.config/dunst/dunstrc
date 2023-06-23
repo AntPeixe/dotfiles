@@ -4,7 +4,7 @@
 frame_color = "#89B4FA"
 separator_color = frame
 gap_size = 5
-font = "JetBrainsMono Nerd Font 9"
+font = "IntelOne Mono 9"
 width = 400
 
 [urgency_low]

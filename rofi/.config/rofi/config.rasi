@@ -1,7 +1,12 @@
-configuration{
+@theme "catppuccin-mocha"
+
+* {
+    font: "IntelOne Mono Medium 12";
+}
+
+configuration {
     modes: "run,drun,filebrowser,window";
     icon-theme: "Papirus";
-    font: "JetBrainsMono Nerd Font 12";
     show-icons: true;
     terminal: "alacritty";
     matching: "fuzzy";
@@ -15,6 +20,4 @@ configuration{
     display-filebrowser: "   Files";
     sidebar-mode: true;
 }
-
-@theme "catppuccin-mocha"
 

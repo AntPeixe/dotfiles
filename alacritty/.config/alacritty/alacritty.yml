@@ -7,9 +7,9 @@ env:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: IntelOne Mono
     style: Medium
-  size: 8
+  size: 9
 
 window:
   opacity: 1
