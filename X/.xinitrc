@@ -36,4 +36,5 @@ fi
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
 
+xset r rate 200
 exec i3
