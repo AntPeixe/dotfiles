@@ -175,6 +175,8 @@ assign [class="alacritty"] $ws1
 assign [class="Brave-browser"] $ws2
 assign [class="Slack"] $ws3
 assign [class="Microsoft Teams - Preview"] $ws3
+assign [class="obsidia"] $ws9
+assign [class="Spotify"] $ws10
 
 # bind workspaces to outputs
 workspace 1 output HDMI1 eDP1
