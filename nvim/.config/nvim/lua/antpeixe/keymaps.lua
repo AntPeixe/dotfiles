@@ -31,9 +31,13 @@ keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 -- ThePrimeagen dotfiles
 -- Paste over without lossing registry
 keymap("x", "<leader>p", "\"_dP", opts)
+
 -- yank to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+
 -- move selected lines up and down
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+
+keymap("n", "<leader>t", "idate<Esc>!!sh<CR>", opts)
