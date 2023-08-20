@@ -4,6 +4,7 @@ alias ta='tmux attach -t'
 alias tnew='tmux new -s'
 alias tls='tmux ls'
 alias tkill='tmux kill-session -t'
+alias tkills='tmux kill-server'
 
 # python venvs
 alias ae='deactivate &> /dev/null; source ./venv/bin/activate'
