@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Set the regex pattern to match the files
+fd_args=$1
+
+# Set the replacement rule for renaming the files
+replace_regex=$2
+replace_rule=$3
+
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# Find the files based on the regex pattern and copy them to the same location with a different name
+fd $fd_args | while read -r file; do
+    new_name=$(echo "$file" | sed -E "s/$replace_regex/$replace_rule/")
+    echo -e "Copying $BLUE$file$NC -> $CYAN$new_name$NC"
+    cp $file $new_name
+done
