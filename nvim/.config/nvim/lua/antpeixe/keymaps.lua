@@ -41,3 +41,6 @@ keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 keymap("n", "<leader>t", "idate<Esc>!!sh<CR>", opts)
+
+-- quick GoLang error handling
+keymap("n", "<leader>ge", "oif err != nil {<CR>return err<CR>}<Esc>", opts)
