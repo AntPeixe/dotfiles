@@ -1,0 +1,18 @@
+import = ["/home/apeixe/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 9
+
+[font.normal]
+family = "IntelOne Mono"
+style = "Medium"
+
+[mouse]
+hide_when_typing = true
+
+[window]
+opacity = 1
