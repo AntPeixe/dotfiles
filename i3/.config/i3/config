@@ -18,11 +18,7 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/.local/scripts/lock.sh --nofork
 # lock (and screen off) in 10min and suspend in 15min
-exec --no-startup-id xautolock -time 15 -locker 'systemctl suspend' -notify 600 -notifier '$HOME/.local/scripts/lock.sh | xset dpms force off' &
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-# exec --no-startup-id nm-applet
+exec --no-startup-id xautolock -time 10 -corners +--- -cornerdelay 5 -cornersize 10 -locker '$HOME/.local/scripts/locksusp.sh' -notify 30 -notifier '$HOME/.local/scripts/lock-notify.sh' &
 
 # ------------------------------------------
 # Bindings
@@ -95,7 +91,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # manual lock and suspend
 bindsym $mod+BackSpace exec --no-startup-id $HOME/.local/scripts/lock.sh
-bindsym $mod+Shift+BackSpace exec systemctl suspend
+bindsym $mod+Shift+BackSpace exec --no-startup-id $HOME/.local/scripts/locksusp.sh
 
 # setup monitors
 bindsym $mod+p exec xrandr --output eDP1 --auto --primary --output HDMI1 --off && nitrogen --restore
