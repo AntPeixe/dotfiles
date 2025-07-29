@@ -1,6 +1,7 @@
 return {
-    "williamboman/mason.nvim",
-    cmd = "Mason",
+    "mason-org/mason.nvim",
+    lazy= true,
+    version = "^1.0.0",
     opts = {
         ui = {
             border = "rounded",
