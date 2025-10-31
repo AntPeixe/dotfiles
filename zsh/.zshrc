@@ -73,7 +73,7 @@ export FZF_DEFAULT_OPTS=" \
 ## ---------------------------
 
 # keychain
-keychain --nogui --noask --confhost --quiet id_rsa id_ed25519
+keychain --nogui --noask --extended --quiet sshk:id_ed25519
 [ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && . $HOME/.keychain/$HOSTNAME-sh
 [ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && . $HOME/.keychain/$HOSTNAME-sh-gpg
