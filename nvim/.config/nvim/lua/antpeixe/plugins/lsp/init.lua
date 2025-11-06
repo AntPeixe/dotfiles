@@ -25,16 +25,19 @@ return {
             capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
             lsphandler.setup()
+
+            local default_cfg = {
+              capabilities = capabilities,
+              on_attach = lsphandler.on_attach,
+            }
+
             local ret = {
               ensure_installed = vim.tbl_keys(servers),
               handlers = {
                 function(server_name)
-                  vim.lsp.config(server_name, {
-                    capabilities = capabilities,
-                    on_attach = lsphandler.on_attach,
-                    settings = servers[server_name],
-                    filetypes = (servers[server_name] or {}).filetypes,
-                  })
+                  local cfg = vim.tbl_extend("force", default_cfg, (servers[server_name] or {}))
+                  vim.lsp.enable(server_name)
+                  vim.lsp.config(server_name, cfg)
                 end,
               },
             }
