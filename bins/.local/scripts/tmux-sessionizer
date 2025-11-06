@@ -4,7 +4,9 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Documents/ ~/projects/ ~/work/ ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    workDirs=$(fdfind '.git$' -H -t d ~/work --min-depth 1 --exec dirname {})
+    otherDirs=$(fdfind . ~/Documents/ ~/projects ~/ --min-depth 1 --max-depth 1 -t d -H)
+    selected=$(echo "$otherDirs"$'\n'"$workDirs" | fzf)
 fi
 
 if [[ -z $selected ]]; then
@@ -12,6 +14,7 @@ if [[ -z $selected ]]; then
 fi
 
 selected_name=$(basename "$selected" | tr . _)
+selected_name=$(echo "$selected" | sed -e "s#$HOME/##" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
